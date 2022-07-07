@@ -1,0 +1,345 @@
+<JAVA 퀴즈>
+
+문제1> 데이터 교환(swap)하는 자바코드를 작성해 보세요.
+          (어떤 두 변수에 있는 값을 서로 바꾸는 것)
+       int a = 1;
+       int b = 2;
+       int temp;
+       temp = a;
+       a = b;
+       b = temp;
+문제2> 구구단을 출력하는 프로그램을 작성해 보세요.
+    import java.util.ArrayList;
+    import java.util.List;
+    // 구구단 출력하기
+    public class Gugudan{
+        List<Integer> resultList;
+
+        public List<Integer> gugudan(int dan){ // 입력된 단수의 결과값을 Arraylist에 넣어 리턴하는 메소드
+            resultList = new ArrayList<>();
+            int count =0;
+            int sum =0;
+            while(count<10){
+                sum += dan;
+                resultList.add(sum);
+                count++;
+            }
+            return resultList;
+        }
+        public void print(int dan){ // 특정 단만 출력한다.
+            System.out.println("구구단 "+dan+"단");
+            int count = 1;
+            for(int result : gugudan(dan)){
+                System.out.println("\t"+ dan+"*"+count+": "+result);
+                count++;
+            }
+        }
+        public void printAll(int limit){ // 구구단 전체를 출력한다. limit는 최대 단수;
+            int count = 1;
+            while(true){
+                print(count);
+                if(count==limit){
+                    break;
+                }
+                count++;
+            }
+        }
+    }
+    class GugudanRun{
+        public static void main(String[] args) {
+            Gugudan gg = new Gugudan();
+            gg.printAll(10); // 구구단 전체를 출력 10*10까지
+    //        gg.print(7); // 구구단 중 특정 단만 출력
+        }
+    }
+
+
+문제3> 구구단 중에 7단만 출력하는 프로그램을 작성해 보세요.
+
+    import java.util.ArrayList;
+    import java.util.List;
+    // 구구단 출력하기
+    public class Gugudan{
+        List<Integer> resultList;
+
+        public List<Integer> gugudan(int dan){ // 입력된 단수의 결과값을 Arraylist에 넣어 리턴하는 메소드
+            resultList = new ArrayList<>();
+            int count =0;
+            int sum =0;
+            while(count<10){
+                sum += dan;
+                resultList.add(sum);
+                count++;
+            }
+            return resultList;
+        }
+        public void print(int dan){ // 특정 단만 출력한다.
+            System.out.println("구구단 "+dan+"단");
+            int count = 1;
+            for(int result : gugudan(dan)){
+                System.out.println("\t"+ dan+"*"+count+": "+result);
+                count++;
+            }
+        }
+        public void printAll(int limit){ // 구구단 전체를 출력한다. limit는 최대 단수;
+            int count = 1;
+            while(true){
+                print(count);
+                if(count==limit){
+                    break;
+                }
+                count++;
+            }
+        }
+    }
+    class GugudanRun{
+        public static void main(String[] args) {
+            Gugudan gg = new Gugudan();
+    //        gg.printAll(10); // 구구단 전체를 출력 10*10까지
+            gg.print(7); // 구구단 중 특정 단만 출력
+        }
+    }
+
+문제4> 1부터 10까지 더하는 프로그램을 작성해 보세요. (for 문 사용)
+    int sum = 0;
+    for(int i =0; i<10; i++){
+        sum += (i+1);
+    }
+    System.out.println(sum);
+
+문제5> 위의 4번 문제를 while 문으로 바꿔서 작성해 보세요.
+    int sum = 0;
+    int count = 0;
+    while(count<=10){
+        sum += count;
+        count++;
+    }
+    System.out.println(sum);
+
+문제6> while 문과 do while 문은 어떤 차이점이 있나요?
+    while은 조건식이 true이면 코드를 실행을 실시하고 false이면 실행하지 않는다. 반면, do-while은 코드를 실행한 뒤 while문내 조건식이 true이면 반복하고, false이면 실행하지 않는다.
+
+문제7> 자바 데이터 타입 중 char와 String의 차이점은 무엇인가요?
+    char는 글자 하나를 입력하는 데이터 타입이나 String 글자열을 입력하는 String 객체 타입이다.
+
+문제8> random 값을 발생시켜서 1~6사이의 정수 값을 얻으려 합니다.  *********
+          코드로 작성해 보세요. (예: int num = ~~~~;)
+    //Math 클래스 활용
+    //Math.random은 0~0.9999 사이의 double 값을 리턴한다.
+    int mathResult = (int)(Math.random()*6)+1;
+    System.out.println(mathResult);
+
+문제9> 클래스와 객체를 인스턴스라는 말을 사용해서 설명하세요.
+    클래스를 생성자를 통해서 객체화하면 인스턴스 객체를 만들수 있다.
+
+문제10> 리터럴은 무엇인가요? *********
+    소스코드 내의 변수에 직접 입력된 값을 리터럴이라 한다.
+
+문제11> 기본 데이터 타입과 참조형 데이터 타입의 근본적인 차이점은 무엇인가요?
+    기본 데이터는 문자나 숫자 등 값 그 자체를 변수에 넣어져 있지만, 참조형은 데이터가 저장되어있는 메모리 영역을 나타내지 위치정보가 변수에 저장되어 있다.
+
+문제12> 데이터 타입 변환이 필요한 이유는 무엇인가요? ***********
+    연산자를 통한 비교하기 위해서는 같은 데이터 타입이어야 한다.
+
+문제13> <보기1>과 <보기2>의 실행 결과를 각각 써 보세요.
+	결과가 다른 이유는 무엇인가요?
+	<보기1>
+	int i = 0;
+	int ret = 100 + i++;
+	System.out.println(ret);
+	System.out.println(i);
+
+    ----> ret: 100, i: 1
+
+	<보기2>
+	int i = 0;
+	int res = 100 + ++i;
+	System.out.println(ret);
+	System.out.println(i);
+
+	----> ret: 101, i: 1;
+
+문제14> 다음을 삼항연산자를 사용하여 코딩하세요.
+	(조건: nn이 60보다 작으면 "과락" 크면 "합격"
+	int nn = 85;
+	String ss = ________________________________;
+
+	---->String str = (nn <60) ? "과락" : "합격")
+
+문제15> 다음을 조건문으로 작성해 보세요.
+	int nn = 90;
+	boolean tt = false;
+	if (________________________) {   // nn 이 90보다 크거나 같고 tt가 true이면
+	// 어떤 코드들
+	} else if (_________________________) { // nn 이 80보다 크거나 tt가 false 이면
+	// 어떤 코드들
+	}
+문제16> 다음에 알맞는 코드를 작성하세요.
+	for (char alp = 'A'; alp <= 'Z'; alp++) {
+	   if (alp == 'K') {
+	      ______________;    // 반복문을 탈출
+	   }
+	}
+문제17> 변수 이름은 arr 이고, 정수 배열로 7개의 방을 만들려고 합니다.
+	new 명령어로 배열을 생성하는 문장을 써 보세요.
+
+	----> int[] arr = new int[7];
+
+문제18> 문제 17번에서 배열의 크기를 가져오려고 합니다. 다음 코드를 완성해 보세요.
+	int len = arr.________;
+
+	----> int len = arr.length;
+
+문제19> 자바에 어떤 클래스 안에 메인 메소드를 코딩하려고 합니다.
+	다음 코드를 완성해 보세요.
+	________________ main(String[] ar) {
+	// 어떤 코드들
+	}
+
+	----> public static void main(String[] args){
+	    someCode;
+	}
+
+문제20> 다음은 main 메소드 내에 코드 부분입니다.
+	다음 코드를 완성해 보세요.
+	int[] sc = { 95, 71, 84 };
+	int sum = 0;
+	for (_____ nn : ______) {
+	   sum = sum + nn;
+	}
+	System.out.println(sum);
+	double avg = ____________ sum / 3;
+	System.out.println(avg);
+
+	----> for(int nn : sc){
+	    sum = sum +nn;
+    }
+    ----> null;
+
+문제21> Student 클래스에 학번(hakbun), 이름(name), 국어, 수학, 영어 점수
+	(kor, mat, eng) 필드를 만듭니다. 생성자는 다음과 같이 구성합니다.
+	Student(String kakbun, String name)
+	Student(String kakbun, String name, int kor, int mat, int eng)
+	this와 this()를 사용하여 생성자를 만듭니다.
+	총점을 리턴하는 메소드 sum()과 평균을 리턴하는 avg()를 만듭니다.
+	(단, 총점은 int, 평균은 double)
+
+	---->public ConstructorStudent(String hakbun, String name, int kor, int mat, int eng) {
+                 this.hakbun = hakbun;
+                 this.name = name;
+                 this.kor = kor;
+                 this.mat = mat;
+                 this.eng = eng;
+             }
+
+             public ConstructorStudent(String hakbun, String name) {
+                 this.hakbun = hakbun;
+                 this.name = name;
+             }
+             public int sum(){
+                 int sum = kor+mat+eng;
+                 return sum;
+             }
+             public double avg(){
+                 double avg = sum()/3;
+                 return avg;
+             }
+
+문제22> Getter와 Setter 메소드는 왜 사용해야 하나요?
+    필드를 private로 설정함으로서 외부에서 접근하지 못하게 하기 위해서 설정한다.
+
+문제23> 로컬변수(지역변수)와 멤버(필드)의 차이점은 무엇인가요?
+    멤버필드는 클래스 내에서 사용되는 필드값이고, 로컬변수는 메소드 내에서만 사용되고 소멸되는 필드값이다;
+
+문제24> 정적(static) 메소드와 메소드의 차이점은 무엇인가요?
+    정적 메소드는 인스턴스 필드값을 사용하지 않는다면 사용하고, 인스턴스 필드값을 써야한다면 인스턴스 메소드를 사용해야한다.
+
+문제25> 생성자와 다른 메소드와 차이점은 무엇인가요?
+    생성자는 리턴값을 가지고 있지 않음 메소드이다.
+
+문제26> protected 접근 제한자의 범위를 설명하세요.
+    protected는 private처럼 외부 클래스에서 접근할수 없지만 해당 클래스와 이를 상속받은 클래스는 접근이 가능하다.
+
+문제27> 객체 타입 확인(instanceof)는 어떤 경우에 사용하나요?
+    자동타입변환과 강제타입변환을 사용할 시 객체가 어떤 타입인지 확인하기 위해서 사용한다.
+
+문제28> 추상 클래스와 인터페이스의 공통점과 차이점은 무엇인가요?
+    메소드명과 파라미터만을 갖추고 실행블록이 비어있는 추상메소드를 가지고 있으며, 객체를 만들지 못하며, 사용하기 위해서는 구현 클래스가 필요하다.
+    차이점은 추상 클래스는 다중상속이 불가능하고 필드를 가질수 있고, 접근제어자 사용가능, 인터페이스는 다중상속이 가능하다 오직 추상메소드,디폴트 메소드, 정적 메소드만 가질수 있다.
+
+문제29> 추상 메소드를 선언하는 이유는 무엇인가요?
+    이를 구현한 클래스별로 @Override 기능을 써서 다르게 구현하기 위해서이다.
+
+문제30> 자바8에서 추가된 인터페이스 기능은 무엇인가요?
+    디폴트 메소드, 정적메소드;
+
+문제31> 다음을 익명 구현 객체로 만들어 보세요. 다음을 완성하세요.
+	interface Aaa {
+	   bbb();
+	}
+	라고 선언되어 있다고 가정합니다.
+	아래는 main 메소드 안이라고 가정합니다.
+	Aaa ss = new _____________
+	      bbb() {
+	      // 어떤 코드들
+	      }
+	};
+	---->  Aaa ss = new Aaa(){
+	someCode;
+	}// 익명구현객체
+	Aaa ss = () -> {someCode;} // 람다
+
+문제32> 디폴트 메소드는 왜 만들었을까요? 약간의 시나리오를 가지고 써 보세요.
+    -  인터페이스가 있는 구조에서 기능추가할 때 추상 메소드를 넣으면 모든 구현체에 구현메소드를 넣어야하지만 디폴트 메소드를 사용할 경우 필요한 구현클래스에만 재정의 할 수 있다.
+
+문제33> 인터페이스 타입으로 변수를 만들어서 다형성을 활용하는 이유는 무엇입니까?
+    - 클래스간의 관계를 약화시키는 루즈커플링하기 위해서이다. 인터페이스 타입 변수를 사용할 시 변수에 넣는 객체에 따라 하나의 변수에 필드와 메소드를 사용할 수 있다.
+
+문제34> 다음을 살펴보고 Driver 클래스를 만들어 보세요.
+	Aaa.java 파일 내용
+	------------------------
+	public interface Aaa {
+	    public void kkk();
+	}
+
+	Bbb.java 파일 내용
+	--------------------
+	public class Bbb implements Aaa {
+	   @Override
+	   public void kkk() {
+		System.out.println("Baa의 kkk");
+	   }
+	}
+
+	Ccc.java 파일 내용
+	--------------------
+	public class Ccc implements Aaa {
+	   @Override
+	   public void kkk() {
+		System.out.println("Ccc의 kkk");
+	   }
+	}
+
+	main 메소드가 있는 java 파일 내용
+	--------------------------------------
+	public class DriverExample {
+	   public static void main(String[] args) {
+		Driver driver = new Driver();
+
+		Bbb bus = new Bbb();
+		Ccc taxi = new Ccc();
+
+		driver.drive(bus);
+		driver.drive(taxi);
+	   }
+	}
+
+	Driver.java 파일을 완성해 보세요.
+
+	---->
+	public Driver{
+        public void drive(Aaa aaa){
+            aaa.kkk();
+        }
+    }
+

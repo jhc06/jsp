@@ -10,6 +10,7 @@ public class Coding0706 {
 
     Map<Integer,Integer> map;
 
+
     public List<Integer> countNum(){
         for(int value : number){
             int firstRemain = value/1000; // 1000을 나눠서 나온 값

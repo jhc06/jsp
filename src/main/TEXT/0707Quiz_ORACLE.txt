@@ -1,0 +1,58 @@
+문제1>DDL, DML, DCL은 각각 무엇이며 어떤 명령들이 있습니까? *************
+    DDL은 데이터 정의어로 데이터베이스 객체를 관리하는 언어(create, drop, alter, truncate)
+    DML은 데이터 조작어로 데이터 삽입, 조회, 삭제, 갱신 등 실제 데이터를 조작하는 언어(select, insert, update, delete, commit, rollback)
+    DCL은 데이터 제어언어로 사용자에게 특정 권한을 주는 GRNAT와 회수하는 REVOKE가 있다.
+
+문제2>관계형 DBMS란 무엇입니까?
+    Relational DataBase Management Systems; 관계형 데이터 베이스 관리 시스템;
+
+문제3>알고 있는 DBMS들을 나열해 보세요.
+    mysql, oracleDB, mariaDB. mongoDB, DjanggoDB
+
+문제4>데이터 무결성 제약조건 5가지를 말해 보세요. **************
+
+문제5>primary key는 무엇인가요?
+    기본키. 테이블에서  컬럼에서 중복되는 값이없고(unique), 값이 비어있으면 안되는(NOT NULL) 값이 있는 컬럼.
+
+문제6>foreign key는 무엇인가요?
+    데이터 무결성을 위한 제약조건. pk에 연결되는 타 테이블상의 칼럼. 둘 중 하나만 변경하거나 삭제할 수 없다.
+
+문제7>데이터베이스 테이블을 생성하는 SQL문을 작성하세요.(primary key와 foreign key를 필수적으로 사용)
+    create table PKsample(
+        col1 varchar2
+        col2 varchar2
+        Constraints pk PRIMARY KEY(col1)
+    )
+    create table FKsample(
+        col3 varchar2
+        col4 varchar2
+        CONSTRAINTS FK FOREIGN KEY(col3)
+        REFERENCES PKsample(col1)
+    )
+
+문제8>테이블 구조를 알아보는 명령은 무엇인가요?
+    desc tableName;
+
+문제9>emp 테이블에서 eno와 ename 컬럼을 출력하는 SQL문을 작성하세요.
+
+문제10>select 문장에서 중복되는 것을 한 번씩만 출력하는 명령은 무엇입니까?
+
+문제11>emp 테이블에서 eno와 ename 컬럼을 eno로 오름차순으로 정렬해서 출력하는 SQL문을 작성하세요.
+
+문제12>오라클에서 숫자를 반올림하는 함수는 무엇인가요?
+
+문제13>날짜 형식을 문자형식으로 바꾸는 함수는 무엇인가요?
+문제14>문자 형식을 날짜형식으로 바꾸는 함수는 무엇인가요?
+문제15>문자 형식을 숫자형식으로 바꾸는 함수는 무엇인가요?
+문제16>NVL 함수의 기능과 방법을 설명하세요.
+문제17>emp 테이블에서 eno가 10인 레코드에서 ename을 "홍길동"으로 수정하는 SQL문을 써보세요.
+문제18>emp 테이블에서 eno가 20인 레코드를 삭제하는 SQL문을 써보세요.
+문제19>emp_tmp 테이블을 만들려고 합니다. emp 테이블의 컬럼은 사용하고 데이터는 가져오지 않게
+           테이블을 생성하는 SQL문을 작성하세요.
+       ----> create table emp_tmp as select * from emp where 0=1
+
+문제20>테이블에 insert 문장을 사용해서 새로운 레코드를 생성했는데, 적용이 되지 않은 경우 실행시킬 명령은 무엇입니까?
+문제21>오라클에서 시퀀스는 무엇이며 어떤 것에 사용하는지 설명하세요.
+문제22>emp 테이블의 dept_id 컬럼은 dept 테이블의 dept_id을 참조하고 있습니다. emp 테이블에 새로운 레코드를 입력하려고 하는데,
+           foreign key 제약조건에 걸려 오류가 났습니다. 원인이 무엇일까요? 해결책은 무엇입니까?
+           ----> emp 테이블의 FK는 dept PK가 같이 바뀌지 않으면 무결성 문제로 바꿀수 없다. 둘다 바꾼다.

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <jsp-config>
+        <jsp-property-group> <!-- 모든 jsp문서의 앞 뒤에 coda.jspf 파일을 삽입한다. -->
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>/preludecoda/prelude.jspf</include-prelude>
+            <include-coda>/preludecoda/coda.jspf</include-coda>
+        </jsp-property-group>
+    </jsp-config>
+</web-app>

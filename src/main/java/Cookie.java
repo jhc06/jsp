@@ -8,6 +8,6 @@ public class Cookie {
 }
 class Test{
     public static void main(String[] args) {
-        map
+//        map
     }
 }
