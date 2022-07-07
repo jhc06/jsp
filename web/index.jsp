@@ -1,16 +1,27 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 2022-07-05
-  Time: 오전 10:40
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> <!--contextType은 응답결과 인코딩 -->
+<%@ page pageEncoding="UTF-8" %> <!--pageEncoding은 JSP 인코딩 -->
+<%@ page import ="java.util.Date" %>
+<%@ page trimDirectiveWhitespaces="true" %> <!-- 페이지 소스 상에서 빈 줄을 제거해준다 -->
 <html>
   <head>
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+    지금:<%=new Date()  %>
+    <br>
+    <form action="<%=request.getContextPath() %>/jspforward/view.jsp" method="get"> <!-- action 파라미터는 url상의 URI를 의미한다 -->
+      <select name="code" >
+        <option value="A">A페이지</option>
+        <option value="B">B페이지</option>
+      </select>
+    <input type = "submit" value = "이동">
+    <input type="reset" value="초기화">
+    <input type="checkbox" name="체크박스" value="dog">
+    </form>
   </body>
 </html>
+<!-- HTML 주석, 소스 상 노출됨 -->
+<%-- JSP 주석, 소스 상 노출되지 않음 --%>
+
+
+
