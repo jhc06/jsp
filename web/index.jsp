@@ -2,6 +2,10 @@
 <%@ page pageEncoding="UTF-8" %> <!--pageEncoding은 JSP 인코딩 -->
 <%@ page import ="java.util.Date" %>
 <%@ page trimDirectiveWhitespaces="true" %> <!-- 페이지 소스 상에서 빈 줄을 제거해준다 -->
+<%@ page session ="true" %> <!-- 세션 객체 생성 및 설정. default값은 true. -->
+<%
+    session.setMaxInactiveInterval(60*60);  //60분. 기본이 초단위로 설정됨.
+%>
 <html>
   <head>
     <title>$Title$</title>

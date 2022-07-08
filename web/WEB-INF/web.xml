@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <jsp-config>
         <jsp-property-group> <!-- 모든 jsp문서의 앞 뒤에 coda.jspf 파일을 삽입한다. -->
             <url-pattern>*.jsp</url-pattern>
@@ -10,4 +11,16 @@
             <include-coda>/preludecoda/coda.jspf</include-coda>
         </jsp-property-group>
     </jsp-config>
+
+    <session-config> <!-- 세션 유효 시간 설정 -->
+        <session-timeout>50</session-timeout> <!-- 최근 접근 시간 이후 ?분 이후 세션 종료 -->
+    </session-config> <!-- 0이나 음수 설정 시 세션은 유효기간을 가지지 않는다.(Infinity) -->
+
+    <!--  application 기본객체에 사용할 초기 파라미터 입력 설정 블록
+    <context-param>
+        <description>example desc</description>
+        <param-name>example</param-name>
+        <param-value>let's study!</param-value>
+    </context-param>
+    -->
 </web-app>
