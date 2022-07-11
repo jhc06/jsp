@@ -6,6 +6,7 @@
 <%
     session.setMaxInactiveInterval(60*60);  //60분. 기본이 초단위로 설정됨.
 %>
+<%@ page import="TEMP.ConstructorStudent" %>
 <html>
   <head>
     <title>$Title$</title>

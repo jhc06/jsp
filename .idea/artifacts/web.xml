@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" build-on-make="true" name="/">
-    <output-path>$PROJECT_DIR$/out/artifacts/_</output-path>
+  <artifact type="exploded-war" build-on-make="true" name="web">
+    <output-path>$PROJECT_DIR$/out/artifacts/web</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="jsp/web/웹" />
+      <element id="javaee-facet-resources" facet="jsp/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="jsp" />
@@ -10,9 +10,8 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.0-M16" />
-          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:10.1.0-M16" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.10" />
-          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:10.1.0-M16" />
         </element>
       </element>
     </root>

@@ -4,9 +4,9 @@
     <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
     <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
-      <artifact name="/">
+      <artifact name="web">
         <settings>
-          <option name="CONTEXT_PATH" value="/_" />
+          <option name="CONTEXT_PATH" value="/web" />
         </settings>
       </artifact>
     </deployment>
@@ -85,7 +85,7 @@
     <method v="2">
       <option name="Make" enabled="true" />
       <option name="BuildArtifacts" enabled="true">
-        <artifact name="/" />
+        <artifact name="web" />
       </option>
     </method>
   </configuration>
