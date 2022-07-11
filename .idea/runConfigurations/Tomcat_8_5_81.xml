@@ -6,7 +6,7 @@
     <deployment>
       <artifact name="/">
         <settings>
-          <option name="CONTEXT_PATH" value="/web" />
+          <option name="CONTEXT_PATH" value="/_" />
         </settings>
       </artifact>
     </deployment>

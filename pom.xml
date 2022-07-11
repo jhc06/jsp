@@ -30,11 +30,11 @@
             <version>3.5.10</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-api -->
         <!-- tomcat -->
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core -->
         <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-api</artifactId>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
             <version>10.1.0-M16</version>
         </dependency>
 
