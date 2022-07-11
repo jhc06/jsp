@@ -13,4 +13,30 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <!-- <dependencies> tag must includes all <dependency> tag -->
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+        <!-- Maven JSTL -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.10</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-api -->
+        <!-- tomcat -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-api</artifactId>
+            <version>10.1.0-M16</version>
+        </dependency>
+
+    </dependencies>
 </project>

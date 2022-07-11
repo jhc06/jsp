@@ -35,7 +35,7 @@
                 <input type="pass">
             </form>
 문제12>utf-8로 캐릭터 셋을 모두 설정하고도 한글이 깨져서 나오는 JSP 페이지가 있으면 조치할 수 있는 코드는 무엇입니까? ****************
-    - <%@ page pageEncoding="UTP8" %>
+    - <%@ request.setCharacterEncoding(utf-8)%>
 
 문제13>HTTP 프로토콜의 GET방식과 POST방식을 비교해서 설명해 보세요.
     - get방식과 post방식을 둘 다 http메소드로 데이터를 전송할 때 쓰이는 방식입니다.
