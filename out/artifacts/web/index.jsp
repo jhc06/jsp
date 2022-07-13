@@ -6,6 +6,7 @@
 <%
     session.setMaxInactiveInterval(60*60);  //60분. 기본이 초단위로 설정됨.
 %>
+<%@ page import="TEMP.ConstructorStudent" %>
 <html>
   <head>
     <title>$Title$</title>
@@ -13,10 +14,14 @@
   <body>
     지금:<%=new Date()  %>
     <br>
+    <%
+      String option = request.getParameter("option");
+    %>
     <form action="<%=request.getContextPath() %>/jspforward/view.jsp" method="get"> <!-- action 파라미터는 url상의 URI를 의미한다 -->
       <select name="code" >
         <option value="A">A페이지</option>
         <option value="B">B페이지</option>
+        <option value="op"><%=option%></option>
       </select>
     <input type = "submit" value = "이동">
     <input type="reset" value="초기화">

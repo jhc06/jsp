@@ -1,10 +1,11 @@
+package TEMP;
 
 import java.util.*;
 
 public class Coding0706 {
 
 //ArrayList를 생성하고 런타임시 필요에 의해 객체들을 추가하는 것이 일반적이지만,
-// 고정된 객체들로 구성된 List생성할 때도 있다. 이런 경우에는 Array.asList(T ... a)메소드를 사용하는 것이 간편한다.
+// 고정된 객체들로 구성된 List생성할 때도 있다. 이0런 경우에는 Array.asList(T ... a)메소드를 사용하는 것이 간편한다.
     List<Integer> number = Arrays.asList(10, 11, 12, 13, 14, 15);
     List<Integer> list = new ArrayList<>();
 
@@ -65,10 +66,10 @@ public class Coding0706 {
 }
 class main{
     public static void main(String[] args) {
-        Coding0706 co = new Coding0706();
-        co.countNum();
-        co.check();
-        co.print(co.result());
+////        Coding0706 co = new Coding0706();
+//        co.countNum();
+//        co.check();
+//        co.print(co.result());
     }
 }
 /*
