@@ -45,14 +45,14 @@ public class JoinHandler implements CommandHandler {
     // isEmpty()
     // - Returns true if this map contains no key-value mappings.
     private String processSubmit(HttpServletRequest req, HttpServletResponse res){
-        JoinRequest joinReq = new JoinRequest();
+        JoinRequest joinReq = new JoinRequest(); // DTO
         joinReq.setId(req.getParameter("id"));
         joinReq.setName(req.getParameter("name"));
         joinReq.setPassword(req.getParameter("password"));
         joinReq.setConfirmPassword(req.getParameter("confirmPassword"));
 
         Map<String, Boolean> errors = new HashMap<>();
-        req.setAttribute("errors", errors); // JSP코드에서 에러종류별 메세지 작성용.
+        req.setAttribute("errors", errors); // JSP view page 에러종류별 메세지 작성용.
 
         joinReq.validate(errors);
 

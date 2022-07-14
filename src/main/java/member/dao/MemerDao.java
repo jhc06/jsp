@@ -1,6 +1,7 @@
 package member.dao;
 
 import member.dto.Member;
+import util.JdbcUtil;
 
 import java.sql.*;
 
@@ -24,7 +25,7 @@ public class MemerDao implements Dao{
             }
             return member;
         } finally {
-            Jdbc.Util.close(rs);
+            JdbcUtil.close(rs);
             JdbcUtil.close(pstmt);
         }
     }

@@ -4,6 +4,7 @@ import JDBC.ConnectionProvider;
 import member.dao.MemerDao;
 import member.dto.JoinRequest;
 import member.dto.Member;
+import util.JdbcUtil;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class JoinService implements Service{
 
             Member member = memberDao.selectById(conn, joinReq.getId());
             if(member !=null){ // param으로 받은 ID값으로 쿼리한 결과가 있으면 가입할수 없다.
-                Jdbc.Util.rollback(conn);
+                JdbcUtil.rollback(conn);
                 throw new DuplicateIdException();
             }
 
