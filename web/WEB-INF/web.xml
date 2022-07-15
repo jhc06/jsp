@@ -4,7 +4,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <session-config> <!-- 세션 유효 시간 설정 -->
+    <!-- 세션 유효 시간 설정 -->
+    <session-config>
         <session-timeout>50</session-timeout> <!-- 최근 접근 시간 이후 ?분 이후 세션 종료 -->
     </session-config> <!-- 0이나 음수 설정 시 세션은 유효기간을 가지지 않는다.(Infinity) -->
 
@@ -43,7 +44,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- 서블릿 설정 -->
+    <!-- 서블릿 설정 및 웹 컨테이너 처음 구성 시점에 초기화하게 설정 -->
     <servlet>
         <servlet-name>Controller</servlet-name>
         <servlet-class>controller.Controller</servlet-class>

@@ -20,13 +20,13 @@ public class Controller  extends HttpServlet {
     private Map<String, CommandHandler> commandHandlerMap =
             new HashMap<>();
 
-    // getInitParameter()
+    // ***** getInitParameter()
     // - 초기화 파라미터 파일 로드.
-    // getServletContext()
+    // ***** getServletContext()
     // - Returns a reference to the ServletContext in which the caller is executing.
-    // getRealpath(String path)
+    // ***** getRealpath(String path)
     // - Returns a String containing the real path for a given virtual path.
-    // hasNext()
+    // ***** hasNext()
     // - 가져올 객체가 있으면 true 리넡 없으면 false 리턴
     public void init() throws ServletException {
         // 초기 파라미터 값으로 프로퍼티를 받아옴
@@ -67,27 +67,29 @@ public class Controller  extends HttpServlet {
         process(request, response);
     }
 
-    // getRequestURI()
+    // ***** getRequestURI()
     // - Returns the part of this request's URL from the protocol name up to the query string
     // in the first line of the HTTP request. The web container does not decode this String.
-    // getContextPath()
+    // ***** getContextPath()
     // - Returns the portion of the request URI that indicates the context of the request.
     // The context path always comes first in a request URI.
     // The path starts with a "/" character but does not end with a "/" character.
     // For servlets in the default (root) context, this method returns "".
     // The container does not decode this string.
-    // indexOf(String str, int fromIndex)
+    // ***** indexOf(String str, int fromIndex)
     // - Returns the index within this string of the first occurrence of
     // the specified substring.
-    // getRequestDispatcher(String path);
+    // ***** getRequestDispatcher(String path);
     // - Returns a RequestDispatcher object that acts as a wrapper for
     // the resource located at the given path.
     // A RequestDispatcher object can be used to forward a request to the resource
     // or to include the resource in a response. The resource can be dynamic or static.
-    // dispatcher.forward(request, response)
-    // - Forwards a request from a servlet to another resource (servlet, JSP file, or HTML file) on the server.
-    //For a RequestDispatcher obtained via getRequestDispatcher(), the ServletRequest object
+    // ***** dispatcher.forward(request, response)
+    // - Forwards a request from a servlet to another resource (servlet, JSP file,
+    // or HTML file) on the server.
+    // For a RequestDispatcher obtained via getRequestDispatcher(), the ServletRequest object
     // has its path elements and parameters adjusted to match the path of the target resource.
+
     private void process(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
         String command = request.getRequestURI();

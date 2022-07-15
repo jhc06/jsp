@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JoinHandler implements CommandHandler {
-    public static final String FORM_VIEW = "/view/joinForm.jsp";
+    public static final String FORM_VIEW = "/web/view/joinForm.jsp";
     private JoinService joinService = new JoinService();
 
     // getMethod()
