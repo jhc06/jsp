@@ -1,7 +1,11 @@
 package member.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
+@Getter@Setter
 public class Member {
     //DTO 는 data trasfer object.
     private String id;
@@ -15,35 +19,6 @@ public class Member {
         this.password = password;
         this.regDate = regDate;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Date getRegDate() {
-        return regDate;
-    }
-
     public void setRegDate(Date regDate) {
         this.regDate = regDate;
     }
