@@ -3,9 +3,10 @@ package member.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
-@Getter@Setter
+@Getter
 public class JoinRequest {
     private String id;
     private String name;
@@ -31,6 +32,12 @@ public class JoinRequest {
                 errors.put("notMatch", Boolean.TRUE);
             }
         }
+    }
+    public void setParam(HttpServletRequest req){
+        this.id=req.getParameter("id");
+        this.name=req.getParameter("name");
+        this.password=req.getParameter("password");
+        this.confirmPassword=req.getParameter("confirmPassword");
     }
 
     private void checkEmpty(Map<String, Boolean> errors,
