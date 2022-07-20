@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JoinHandler implements CommandHandler {
-    public static final String FORM_VIEW = "/web/view/joinForm.jsp";
+    public static final String FORM_VIEW = "/view/joinForm.jsp";
     private JoinService joinService = new JoinService();
 
     // getMethod()
@@ -21,11 +21,13 @@ public class JoinHandler implements CommandHandler {
     // Status code (405) indicating that the method specified in the Request-Line
     // is not allowed for the resource identified by the Request-URI.
     // specified 명시된, identified 식별된
+    // *****equalsIgnoreCase(String str)
+    // - 대소문자를 구분하는 equals와 달리 대소문자 구분없이 값을 비교합니다.
     @Override
     public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-        if(req.getMethod().equals("GET")){
+        if(req.getMethod().equalsIgnoreCase("GET")){
             return processForm(req,res);
-        } else if (req.getMethod().equals("POST")) {
+        } else if (req.getMethod().equalsIgnoreCase("POST")) {
             return processSubmit(req,res);
         } else {
             res.setStatus(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
@@ -53,7 +55,9 @@ public class JoinHandler implements CommandHandler {
 //        joinReq.setConfirmPassword(req.getParameter("confirmPassword"));
 
         Map<String, Boolean> errors = new HashMap<>();
-        req.setAttribute("errors", errors); // JSP view page 에러종류별 메세지 작성용.
+        req.setAttribute("errors", errors);
+        // request 기본 객체에 errors key값, errors Map 값을 참조한다.
+        // 이렇게 해서 Controller 클래스에서 dispacher로 request 객체를 JSP view 페이지로 전달한다.
 
         joinReq.validate(errors);
 
@@ -62,9 +66,9 @@ public class JoinHandler implements CommandHandler {
         }
         try{
             joinService.join(joinReq);
-            return "/web/view/joinSuccess.jsp";
+            return "/view/joinSuccess.jsp";
         } catch (DuplicateIdException e){
-            errors.put("dulplicateId", Boolean.TRUE);
+            errors.put("duplicateId", Boolean.TRUE);
             return FORM_VIEW;
         }
     }

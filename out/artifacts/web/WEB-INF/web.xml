@@ -4,31 +4,27 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <session-config> <!-- 세션 유효 시간 설정 -->
+    <!-- 세션 유효 시간 설정 -->
+    <session-config>
         <session-timeout>50</session-timeout> <!-- 최근 접근 시간 이후 ?분 이후 세션 종료 -->
     </session-config> <!-- 0이나 음수 설정 시 세션은 유효기간을 가지지 않는다.(Infinity) -->
 
-    <!--  application 기본객체에 사용할 초기 파라미터 입력 설정 블록
-    <context-param>
-        <description>example desc</description>
-        <param-name>example</param-name>
-        <param-value>let's study!</param-value>
-    </context-param>
-    -->
+
     <!-- poolConfig -->
     <context-param>
         <param-name>poolConfig</param-name>
         <param-value>
-            jdbcdriver=oracle.jdbc.driver.OracleDriver
-            jdbcUrl=jdbc:oracle:thin:@localhost:1521:XE?characterEncoding=utf8
-            dbUser=c##TEST
+            jdbcDriver=oracle.jdbc.driver.OracleDriver
+            jdbcUrl=jdbc:oracle:thin:@localhost:1521:XE
+            dbUser=C##TEST
             dbPass=oracle
-            validationQuer=select 1
+            validationQuery=select 1
             minIdle=3
             maxTotal=30
             poolName=board
         </param-value>
     </context-param>
+
     <!-- 인코딩 필터 매핑 및 초기 파라미터 설정 -->
     <filter>
         <filter-name>encodingFilter</filter-name>
@@ -38,18 +34,30 @@
             <param-value>utf-8</param-value>
         </init-param>
     </filter>
+
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!-- 서블릿 설정 -->
+    <!-- 로그인 필터 매핑 -->
+    <filter>
+        <filter-name>LoginCheckFilter</filter-name>
+        <filter-class>filter.LoginCheckFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LoginCheckFilter</filter-name>
+        <url-pattern>/change.Pwd.do</url-pattern>
+    </filter-mapping>
+
+    <!-- 서블릿 설정 및 웹 컨테이너 처음 구성 시점에 초기화하게 설정 -->
     <servlet>
         <servlet-name>Controller</servlet-name>
         <servlet-class>controller.Controller</servlet-class>
         <init-param>
             <param-name>configFile</param-name>
-            <param-value>/web/commandHandler.properties</param-value>
+            <param-value>/commandHandler.properties</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

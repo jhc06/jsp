@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 
-public class JoinService implements Service{
+public class JoinService {
     private MemerDao memberDao = new MemerDao();
 
     public void join(JoinRequest joinReq){
@@ -22,7 +22,7 @@ public class JoinService implements Service{
             Member member = memberDao.selectById(conn, joinReq.getId());
             if(member !=null){ // param으로 받은 ID값으로 쿼리한 결과가 있으면 가입할수 없다.
                 JdbcUtil.rollback(conn);
-                throw new DuplicateIdException();
+                throw new DuplicateIdException(); // 던진 에러객체를 JoinHandler에서 받아서 catch 처리함
             }
 
             memberDao.insert(conn,new Member(joinReq.getId(), joinReq.getName(), joinReq.getPassword(), new Date()));

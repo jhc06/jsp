@@ -5,7 +5,7 @@ import util.JdbcUtil;
 
 import java.sql.*;
 
-public class MemerDao implements Dao{
+public class MemerDao {
     public Member selectById(Connection conn, String id) throws SQLException {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -32,6 +32,8 @@ public class MemerDao implements Dao{
     private Date toDate(Timestamp date){
         return date == null ? null : new Date(date.getTime());
     }
+
+
     public void insert(Connection conn,Member member) throws SQLException {
         try(PreparedStatement pstmt = conn.prepareStatement("insert into member values(?,?,?,?)")){
             pstmt.setString(1, member.getId());
