@@ -48,7 +48,7 @@
 
     <filter-mapping>
         <filter-name>LoginCheckFilter</filter-name>
-        <url-pattern>/change.Pwd.do</url-pattern>
+        <url-pattern>/changePwd.do</url-pattern>
     </filter-mapping>
 
     <!-- 서블릿 설정 및 웹 컨테이너 처음 구성 시점에 초기화하게 설정 -->

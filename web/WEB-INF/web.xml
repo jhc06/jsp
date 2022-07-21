@@ -9,7 +9,6 @@
         <session-timeout>50</session-timeout> <!-- 최근 접근 시간 이후 ?분 이후 세션 종료 -->
     </session-config> <!-- 0이나 음수 설정 시 세션은 유효기간을 가지지 않는다.(Infinity) -->
 
-
     <!-- poolConfig -->
     <context-param>
         <param-name>poolConfig</param-name>
@@ -48,7 +47,7 @@
 
     <filter-mapping>
         <filter-name>LoginCheckFilter</filter-name>
-        <url-pattern>/change.Pwd.do</url-pattern>
+        <url-pattern>/changePwd.do</url-pattern>
     </filter-mapping>
 
     <!-- 서블릿 설정 및 웹 컨테이너 처음 구성 시점에 초기화하게 설정 -->
