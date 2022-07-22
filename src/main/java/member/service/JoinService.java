@@ -1,7 +1,7 @@
 package member.service;
 
 import JDBC.ConnectionProvider;
-import member.dao.MemerDao;
+import member.dao.MemberDao;
 import member.dto.JoinRequest;
 import member.dto.Member;
 import util.JdbcUtil;
@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.Date;
 
 public class JoinService {
-    private MemerDao memberDao = new MemerDao();
+    private MemberDao memberDao = new MemberDao();
 
     public void join(JoinRequest joinReq){
         Connection conn =null;

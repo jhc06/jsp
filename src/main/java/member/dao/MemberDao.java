@@ -5,7 +5,7 @@ import util.JdbcUtil;
 
 import java.sql.*;
 
-public class MemerDao {
+public class MemberDao {
     public Member selectById(Connection conn, String id) throws SQLException {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -45,7 +45,7 @@ public class MemerDao {
     }
     public void update(Connection conn, Member member) throws SQLException {
         try(PreparedStatement pstmt = conn.prepareStatement(
-                "update member set name = ?, password = ? where memberid = ?")){
+                "update member set name = ?, password = ? where id = ?")){
             pstmt.setString(1, member.getName());
             pstmt.setString(2, member.getPassword());
             pstmt.setString(3, member.getId());

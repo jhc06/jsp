@@ -9,7 +9,7 @@
     <u:isLogin>
         CT: ${authUser.name}님, 안녕하세요. <!-- 표현언어상 key값에 해당하는 객체를 호출해서 사용한다.-->
         <a href="logout.do">[로그아웃하기]</a>
-        <a href="change.Pwd.do">[암호변경하기]</a>
+        <a href="changePwd.do">[암호변경하기]</a>
     </u:isLogin>
     <u:notLogin>
         CT: <a href="join.do">[회원가입하기]</a>
